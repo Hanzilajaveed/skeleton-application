@@ -27,5 +27,5 @@ return [
     'Zend\Validator',
     'ZendDeveloperTools',
     'Application',
-    'Employee' ,
+    'Employee',
 ];

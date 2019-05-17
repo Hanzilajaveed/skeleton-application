@@ -5,7 +5,12 @@ use Zend\Router\Http\Segment;
 return [ 
    'controllers' => [ 
       'factories' => [ 
-         Controller\EmployeeController::class => InvokableFactory::class, 
+         // Controller\EmployeeController::class => InvokableFactory::class,
+         Controller\EmployeeController::class => function($container) {
+         return new Controller\EmployeeController(
+            $container->get(Model\EmployeeTable::class)
+         ); 
+      },
       ], 
    ], 
    'router' => [ 
